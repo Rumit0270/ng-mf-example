@@ -17,7 +17,8 @@
     "paths": {
       "@ng-mf-example/shared-lib": ["libs/shared-lib/src/index.ts"],
       "mfe1/Routes": ["apps/mfe1/src/app/remote-entry/entry.routes.ts"],
-      "mfe2/Routes": ["apps/mfe2/src/app/remote-entry/entry.routes.ts"]
+      "mfe2/Routes": ["apps/mfe2/src/app/remote-entry/entry.routes.ts"],
+      "mfe3/Module": ["apps/mfe3/src/remote-entry.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

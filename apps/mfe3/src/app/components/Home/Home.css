@@ -1,0 +1,11 @@
+.app-title {
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
+.app-title img {
+  width: 48px;
+  height: 48px;
+}

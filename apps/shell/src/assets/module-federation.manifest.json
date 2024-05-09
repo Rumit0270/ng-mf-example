@@ -1,4 +1,5 @@
 {
   "mfe1": "http://localhost:4201",
-  "mfe2": "http://localhost:4202"
+  "mfe2": "http://localhost:4202",
+  "mfe3": "http://localhost:4203/remoteEntry.js"
 }
