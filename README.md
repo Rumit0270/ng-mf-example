@@ -1,11 +1,13 @@
 # Microfrontend with Nx and Webpack
 
 - This is a simple demostration of a micro-frontend app with Webpack Module federation and Nx.
+- node version: v20.14.0
 
 ## References
 
 - [Nx Module Federation with Angular](https://nx.dev/recipes/angular/dynamic-module-federation-with-angular)
 - [Nx React](https://nx.dev/nx-api/react)
+- [Upgrade Angular with Nx](https://medium.com/@marcelltech/update-guide-nx-workspace-to-angular-17-77af98c88895)
 
 ## Steps
 
