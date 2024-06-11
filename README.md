@@ -56,3 +56,19 @@ nx g @nx/react:remote mfe3 --directory=apps/mfe3
 ```sh
 nx serve shell
 ```
+
+## For running tests
+
+- Run test for a application
+
+```sh
+npm run test:mfe1
+nx run mfe1:test --watchAll=true
+```
+
+- To run test for a specific file
+
+```sh
+nx run mfe1:test --testFile=apps/mfe1/src/app/remote-entry/home/home.component.spec.ts
+nx run mfe1:test --testFile=apps/mfe1/src/app/remote-entry/home/home.component.spec.ts --watch
+```
