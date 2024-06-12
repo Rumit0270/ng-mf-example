@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LogService } from '@ng-mf-example/shared-lib';
+import { ButtonComponent, LogService } from '@ng-mf-example/shared-lib';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

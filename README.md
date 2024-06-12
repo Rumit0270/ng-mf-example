@@ -8,6 +8,8 @@
 - [Nx Module Federation with Angular](https://nx.dev/recipes/angular/dynamic-module-federation-with-angular)
 - [Nx React](https://nx.dev/nx-api/react)
 - [Upgrade Angular with Nx](https://medium.com/@marcelltech/update-guide-nx-workspace-to-angular-17-77af98c88895)
+- [Article](https://javascript-conference.com/blog/microfrontends-in-the-monorepo/)
+- [Microfrontends](https://javascript.plainenglish.io/its-time-to-talk-about-import-map-micro-frontend-and-nx-monorepo-0b8e2c07568a)
 
 ## Steps
 
@@ -63,7 +65,7 @@ nx serve shell
 
 ```sh
 npm run test:mfe1
-nx run mfe1:test --watchAll=true
+nx run mfe1:test --watchAll
 ```
 
 - To run test for a specific file
