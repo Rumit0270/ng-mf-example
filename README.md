@@ -63,7 +63,7 @@ nx serve shell
 
 ```sh
 npm run test:mfe1
-nx run mfe1:test --watchAll=true
+nx run mfe1:test --watchAll
 ```
 
 - To run test for a specific file
