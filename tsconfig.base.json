@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ng-mf-example/data-store": ["libs/data-store/src/index.ts"],
       "@ng-mf-example/shared-lib": ["libs/shared-lib/src/index.ts"],
       "mfe1/Routes": ["apps/mfe1/src/app/remote-entry/entry.routes.ts"],
       "mfe2/Routes": ["apps/mfe2/src/app/remote-entry/entry.routes.ts"],

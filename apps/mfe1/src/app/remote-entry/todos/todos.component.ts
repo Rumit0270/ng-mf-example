@@ -6,7 +6,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { Todo } from './models/todos.model';
 @Component({
-  selector: 'app-todos',
+  selector: 'mfe1-todos',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './todos.component.html',

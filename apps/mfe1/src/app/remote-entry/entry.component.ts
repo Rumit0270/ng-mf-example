@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   standalone: true,
   imports: [CommonModule, RouterModule],
-  selector: 'app-mfe1-entry',
+  selector: 'mfe1-entry',
   template: `<router-outlet></router-outlet>`,
 })
 export class RemoteEntryComponent {}

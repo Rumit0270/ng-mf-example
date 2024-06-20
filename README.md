@@ -74,3 +74,21 @@ nx run mfe1:test --watchAll
 nx run mfe1:test --testFile=apps/mfe1/src/app/remote-entry/home/home.component.spec.ts
 nx run mfe1:test --testFile=apps/mfe1/src/app/remote-entry/home/home.component.spec.ts --watch
 ```
+
+## Sharing state with ngRx
+
+- [Docs](https://nx.dev/nx-api/angular/generators/ngrx-root-store)
+
+- Create new shared library for state management
+
+```sh
+nx g @nx/angular:lib libs/data-store
+```
+
+- Create new feature store and add relevant logic
+
+```sh
+nx g @nx/angular:ngrx-feature-store count
+```
+
+- Now, configure the feature store in relevant apps

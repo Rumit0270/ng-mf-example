@@ -3,3 +3,9 @@
 <button id="btn-view-todos" lib-button (click)="handleClick()">
   View Todos
 </button>
+
+<div class="counter">
+  <button (click)="increment()">Increment</button>
+  <div>Current Count: {{ count$ | async }}</div>
+  <button (click)="decrement()">Decrement</button>
+</div>

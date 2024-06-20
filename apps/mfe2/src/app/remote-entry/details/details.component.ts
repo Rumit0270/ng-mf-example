@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-details',
+  selector: 'mfe2-details',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './details.component.html',
