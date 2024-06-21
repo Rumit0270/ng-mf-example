@@ -10,6 +10,7 @@
 - [Upgrade Angular with Nx](https://medium.com/@marcelltech/update-guide-nx-workspace-to-angular-17-77af98c88895)
 - [Article](https://javascript-conference.com/blog/microfrontends-in-the-monorepo/)
 - [Microfrontends](https://javascript.plainenglish.io/its-time-to-talk-about-import-map-micro-frontend-and-nx-monorepo-0b8e2c07568a)
+- [Nx Angular Monorepo](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
 
 ## Steps
 
@@ -92,3 +93,8 @@ nx g @nx/angular:ngrx-feature-store count
 ```
 
 - Now, configure the feature store in relevant apps
+
+## E2E test with Cypress
+
+- https://nx.dev/nx-api/cypress
+- https://docs.cypress.io/guides/guides/network-requests
