@@ -10,12 +10,13 @@ import {
   COUNT_FEATURE_KEY,
   CountPartialState,
 } from '@ng-mf-example/data-store';
+import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent, LogService } from '@ng-mf-example/shared-lib';
 
 @Component({
   selector: 'mfe1-app-home',
   standalone: true,
-  imports: [CommonModule, ButtonComponent],
+  imports: [CommonModule, ButtonComponent, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

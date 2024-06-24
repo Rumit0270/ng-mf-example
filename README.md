@@ -60,6 +60,13 @@ nx g @nx/react:remote mfe3 --directory=apps/mfe3
 nx serve shell
 ```
 
+- Build the application. Additinal flags can be provided in a similar fashion to ng command.
+
+```sh
+nx build mfe1
+nx build mfe1 --deploy-url=/ui/mfe1/ --output-hashing=all --aot
+```
+
 ## For running tests
 
 - Run test for a application
@@ -98,3 +105,7 @@ nx g @nx/angular:ngrx-feature-store count
 
 - https://nx.dev/nx-api/cypress
 - https://docs.cypress.io/guides/guides/network-requests
+
+## I18n with ngx-translate
+
+- Language change is propagated from shell to sub application via shared service

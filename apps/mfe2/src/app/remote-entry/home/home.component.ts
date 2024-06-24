@@ -2,6 +2,7 @@ import { Store } from '@ngrx/store';
 import { Observable, map } from 'rxjs';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ButtonComponent, LogService } from '@ng-mf-example/shared-lib';
 
@@ -15,7 +16,7 @@ import {
 @Component({
   selector: 'mfe2-home',
   standalone: true,
-  imports: [CommonModule, ButtonComponent],
+  imports: [CommonModule, ButtonComponent, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

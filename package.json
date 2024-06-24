@@ -34,6 +34,8 @@
     "@ngrx/entity": "~18.0.0",
     "@ngrx/router-store": "~18.0.0",
     "@ngrx/store": "~18.0.0",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
     "@nx/angular": "19.2.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",

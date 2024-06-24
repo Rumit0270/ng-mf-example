@@ -40,7 +40,13 @@
           "outputHashing": "all",
           "customWebpackConfig": {
             "path": "apps/mfe2/webpack.prod.config.ts"
-          }
+          },
+          "fileReplacements": [
+            {
+              "replace": "apps/mfe2/src/environments/environment.ts",
+              "with": "apps/mfe2/src/environments/environment.prod.ts"
+            }
+          ]
         },
         "development": {
           "buildOptimizer": false,
