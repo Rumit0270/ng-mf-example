@@ -3,15 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-import { RootComponent } from './root.component';
 import { HomeComponent } from './home/home.component';
+import { RemoteEntryComponent } from './entry.component';
 import { DetailsComponent } from './details/details.component';
 import { createTranslationLoader } from '../translation.loader';
 
 export const remoteRoutes: Route[] = [
   {
     path: '',
-    component: RootComponent,
+    component: RemoteEntryComponent,
     children: [
       {
         path: 'details',

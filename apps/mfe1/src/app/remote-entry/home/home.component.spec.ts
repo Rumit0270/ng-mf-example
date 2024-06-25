@@ -1,6 +1,9 @@
+import { TranslateModule } from '@ngx-translate/core';
+import { provideMockStore } from '@ngrx/store/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HomeComponent } from './home.component';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+
+import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -10,8 +13,11 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeComponent, RouterModule],
-      providers: [{ provide: ActivatedRoute, useValue: {} }],
+      imports: [HomeComponent, RouterModule, TranslateModule.forRoot()],
+      providers: [
+        { provide: ActivatedRoute, useValue: {} },
+        provideMockStore({}),
+      ],
     }).compileComponents();
 
     router = TestBed.inject(Router);

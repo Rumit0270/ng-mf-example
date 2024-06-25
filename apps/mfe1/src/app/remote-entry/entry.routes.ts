@@ -5,14 +5,13 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { HomeComponent } from './home/home.component';
 import { TodosComponent } from './todos/todos.component';
+import { RemoteEntryComponent } from './entry.component';
 import { createTranslationLoader } from '../translation.loader';
-
-import { RootComponent } from './root.component';
 
 export const remoteRoutes: Route[] = [
   {
     path: '',
-    component: RootComponent,
+    component: RemoteEntryComponent,
     children: [
       {
         path: 'todos',
