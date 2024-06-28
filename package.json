@@ -17,7 +17,8 @@
     "test:mfe1": "nx test mfe1",
     "test:mfe2": "nx test mfe2",
     "test:mfe3": "nx test mfe3",
-    "test:mfe1:e2e": "nx e2e mfe1"
+    "test:mfe1:e2e": "nx e2e mfe1",
+    "test:shared-lib": "nx test shared-lib"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +38,7 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "@nx/angular": "19.2.2",
+    "merge-jsons-webpack-plugin": "^2.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-router-dom": "^6.23.0",

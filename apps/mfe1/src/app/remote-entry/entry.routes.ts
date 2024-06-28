@@ -6,7 +6,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HomeComponent } from './home/home.component';
 import { TodosComponent } from './todos/todos.component';
 import { RemoteEntryComponent } from './entry.component';
-import { createTranslationLoader } from '../translation.loader';
+import { TranslateLoaderFactory } from '../translation.loader';
 
 export const remoteRoutes: Route[] = [
   {
@@ -25,7 +25,7 @@ export const remoteRoutes: Route[] = [
         TranslateModule.forChild({
           loader: {
             provide: TranslateLoader,
-            useFactory: createTranslationLoader,
+            useFactory: TranslateLoaderFactory,
             deps: [HttpClient],
           },
           isolate: true,

@@ -4,7 +4,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ButtonComponent, LogService } from '@ng-mf-example/shared-lib';
+import {
+  BannerComponent,
+  ButtonComponent,
+  LogService,
+} from '@ng-mf-example/shared-lib';
 
 import {
   incrementCount,
@@ -16,7 +20,7 @@ import {
 @Component({
   selector: 'mfe2-home',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, TranslateModule],
+  imports: [CommonModule, ButtonComponent, TranslateModule, BannerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

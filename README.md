@@ -11,6 +11,7 @@
 - [Article](https://javascript-conference.com/blog/microfrontends-in-the-monorepo/)
 - [Microfrontends](https://javascript.plainenglish.io/its-time-to-talk-about-import-map-micro-frontend-and-nx-monorepo-0b8e2c07568a)
 - [Nx Angular Monorepo](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
+- [Handle Translations](https://stackoverflow.com/questions/76219437/share-ngx-translate-translation-files-across-multiple-apps-in-a-nx-workspace)
 
 ## Steps
 
@@ -109,3 +110,7 @@ nx g @nx/angular:ngrx-feature-store count
 ## I18n with ngx-translate
 
 - Language change is propagated from shell to sub application via shared service
+
+- Each app maintains its own set of translations
+
+- Translations for shared UI elements are maintained under shared lib and then the configuration on subapps are updated to include the shared translations in bundle. Micro apps will then load both set of translations initially.
