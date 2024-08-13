@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  appURL: '',
-  name: 'prod',
+  name: 'staging',
+  baseHref: '/ui/shell',
 };

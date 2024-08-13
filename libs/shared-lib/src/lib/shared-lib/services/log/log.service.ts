@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class LogService {
   private _count = 0;
 
-  log(message: string) {
-    console.log(`LogService: ${this._count}`, message);
+  log(message: string, ...args: any[]) {
+    console.log(`LogService: ${this._count}`, message, ...args);
     this._count++;
   }
 }

@@ -1,0 +1,64 @@
+name: CI with Nx
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Cache node_modules
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      # This enables task distribution via Nx Cloud
+      # Run this command as early as possible, before dependencies are installed
+      # Connect your workspace on nx.app and uncomment this to enable task distribution.
+      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
+      # - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
+      # - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js"
+      #   name: Enable Nx Task distribution with NX agents
+
+      - name: Cache Node modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: node_modules-${{hashFiles('package-lock.json')}}
+          restore-keys: node_modules- # Take any latest cache if failed to find it for current package-lock.json'
+
+      - run: npm ci
+        name: Install Dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+
+      - uses: nrwl/nx-set-shas@v4
+        name: Configure base and head SHAs required for the nx affected
+
+      # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
+      # - run: npx nx-cloud record -- echo Hello World
+      # nx affected executes only the targets that have been affected by the PR
+      - run: npx nx affected -t lint test build
+        name: Run targets affected by PR
+      # - run: npx nx affected --parallel 1 -t e2e-ci //
+
+      # Use Nx Remote caching to run lint, test and build in parallel
+      # Remote cache is shared across all agents
+      # - run: npx nx run-many -t lint test build
+      #   name: Run lint, test and build
+
+      # Build the app for different environment
+      - name: Build app for staging
+        run: npx nx run-many -t lint test build --configuration=staging

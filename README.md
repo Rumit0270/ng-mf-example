@@ -84,6 +84,13 @@ nx run mfe1:test --testFile=apps/mfe1/src/app/remote-entry/home/home.component.s
 nx run mfe1:test --testFile=apps/mfe1/src/app/remote-entry/home/home.component.spec.ts --watch
 ```
 
+- Check Nx project configuration
+
+```sh
+npx nx show project [PROJECT_NAME] --web
+npx nx show project mfe1 --web
+```
+
 ## Sharing state with ngRx
 
 - [Docs](https://nx.dev/nx-api/angular/generators/ngrx-root-store)

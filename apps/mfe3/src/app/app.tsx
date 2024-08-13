@@ -25,6 +25,7 @@ const users = [
 export function App() {
   return (
     <div className={styles['container']}>
+      {/* TODO: Configure basename based on environment: staging -> /ui/shell/mfe3 */}
       <Router basename={isStandalone ? '/' : '/mfe3'}>
         <Routes>
           <Route
