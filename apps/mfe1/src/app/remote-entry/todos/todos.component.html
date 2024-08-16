@@ -1,5 +1,7 @@
 <h2>Pending Tasks</h2>
 
 <ul>
-  <li *ngFor="let todo of todos">{{ todo.title }}</li>
+  <li *ngFor="let todo of todos; let i = index">
+    {{ i + 1 }} - {{ todo.title }}
+  </li>
 </ul>

@@ -45,6 +45,15 @@
             }
           ]
         },
+        "staging": {
+          "fileReplacements": [
+            {
+              "replace": "apps/mfe2/src/environments/environment.ts",
+              "with": "apps/mfe2/src/environments/environment.staging.ts"
+            }
+          ],
+          "baseHref": "/ui/mfe2/"
+        },
         "development": {
           "buildOptimizer": false,
           "optimization": false,

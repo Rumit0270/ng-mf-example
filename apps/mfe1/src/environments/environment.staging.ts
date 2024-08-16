@@ -1,6 +1,6 @@
 export const environment = {
-  production: false,
+  production: true,
   apiURL: 'https://jsonplaceholder.typicode.com',
-  appURL: 'http://localhost:4201',
-  name: '',
+  appURL: 'http://localhost:5000/ui/mfe1',
+  name: 'staging',
 };
