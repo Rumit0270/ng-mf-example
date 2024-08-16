@@ -10,13 +10,11 @@ module.exports = composePlugins(withModuleFederation(config), (config) => {
       output: {
         groupBy: [
           {
-            pattern:
-              '{./apps/mfe2/src/assets/i18n/en/**/*.json,./libs/shared-lib/src/assets/i18n/en/**/*.json}',
+            pattern: './libs/shared-lib/src/assets/i18n/en/**/*.json',
             fileName: './assets/i18n/en.json',
           },
           {
-            pattern:
-              '{./apps/mfe2/src/assets/i18n/fr/**/*.json,./libs/shared-lib/src/assets/i18n/fr/**/*.json}',
+            pattern: './libs/shared-lib/src/assets/i18n/fr/**/*.json',
             fileName: './assets/i18n/fr.json',
           },
         ],
