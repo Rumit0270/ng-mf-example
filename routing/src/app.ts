@@ -30,9 +30,15 @@ app.get('/mfe3', (_, res) => {
   return res.sendFile(mfe3Html);
 });
 
-app.get('/', (_, res) => {
+app.get('/ui/shell/*', (_, res) => {
   const shellHtml = publicPath + '/ui/shell/index.html';
   return res.sendFile(shellHtml);
+});
+
+app.get('/', (_, res) => {
+  // const shellHtml = publicPath + '/ui/shell/index.html';
+  // return res.sendFile(shellHtml);
+  return res.redirect('/ui/shell');
 });
 
 export { app };
