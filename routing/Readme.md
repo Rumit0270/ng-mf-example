@@ -2,13 +2,13 @@
 
 ## Prerequisites
 
-- From the root build the frontend application
+- From the root, build the frontend application
 
 ```sh
 npm run build:staging
 ```
 
-- Create symlink for the generate dist
+- Create symlink for the generated dist
 
 ```sh
 ln -s <path>/ng-mf-example/dist/apps <path>/routing/public/ui
