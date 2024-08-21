@@ -1,7 +1,7 @@
 {
-  "name": "snt-frontend-routing-poc",
+  "name": "test-microfrontend-routing",
   "version": "1.0.0",
-  "description": "POC application to separate frontend routing from Rails app",
+  "description": "Application to test build of microfrontend apps",
   "main": "index.js",
   "scripts": {
     "start": "tsc && node dist/index.js",

@@ -22,11 +22,13 @@ const users = [
   { name: 'Jack', email: 'jack@example.com' },
 ];
 
+const basename = isStandalone ? '/' : process.env.BASE_PREFIX;
+
 export function App() {
   return (
     <div className={styles['container']}>
-      {/* TODO: Configure basename based on environment: staging -> /ui/shell/mfe3 */}
-      <Router basename={isStandalone ? '/' : '/mfe3'}>
+      {/* Configure basename based on environment: staging -> /ui/shell/mfe3 */}
+      <Router basename={basename}>
         <Routes>
           <Route
             path="user-list"
