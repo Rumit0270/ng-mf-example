@@ -58,14 +58,14 @@ jobs:
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
       # nx affected executes only the targets that have been affected by the PR
-      - run: npx nx affected -t lint test build
-        name: Run targets affected by PR
+      # - run: npx nx affected -t lint test build
+      #   name: Run targets affected by PR
       # - run: npx nx affected --parallel 1 -t e2e-ci //
 
       # Use Nx Remote caching to run lint, test and build in parallel
       # Remote cache is shared across all agents
-      # - run: npx nx run-many -t lint test build
-      #   name: Run lint, test and build
+      - run: npx nx run-many -t lint test build
+        name: Run lint, test and build
 
       # Build the app for different environment
       - name: Build app for staging

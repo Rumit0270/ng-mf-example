@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   apiURL: 'https://jsonplaceholder.typicode.com',
-  appURL: '',
+  baseHref: '',
   name: 'prod',
 };

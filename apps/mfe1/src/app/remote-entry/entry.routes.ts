@@ -21,17 +21,17 @@ export const remoteRoutes: Route[] = [
       { path: '**', redirectTo: '' },
     ],
     providers: [
-      importProvidersFrom(
-        TranslateModule.forChild({
-          loader: {
-            provide: TranslateLoader,
-            useFactory: TranslateLoaderFactory,
-            deps: [HttpClient],
-          },
-          isolate: true,
-          defaultLanguage: 'en',
-        })
-      ),
+      // importProvidersFrom(
+      //   TranslateModule.forChild({
+      //     loader: {
+      //       provide: TranslateLoader,
+      //       useFactory: TranslateLoaderFactory,
+      //       deps: [HttpClient],
+      //     },
+      //     isolate: true,
+      //     defaultLanguage: 'en',
+      //   })
+      // ),
     ],
   },
 ];
