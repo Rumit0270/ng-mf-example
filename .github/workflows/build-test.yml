@@ -1,4 +1,4 @@
-name: CI with Nx
+name: Build/Test/Lint applications
 
 on:
   push:
@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        name: Checkout code
         with:
           fetch-depth: 0
 
@@ -29,7 +30,7 @@ jobs:
       # Connect your workspace on nx.app and uncomment this to enable task distribution.
       # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
       # - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
-      # - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js"
+      # - run: npx nx-cloud start-ci-run --distribute-on="3 linux-medium-js"
       #   name: Enable Nx Task distribution with NX agents
 
       - name: Cache Node modules
@@ -43,6 +44,13 @@ jobs:
       - run: npm ci
         name: Install Dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
+
+      - name: Add .env file for React app
+        run: |
+          echo "${{ secrets.REACT_APP_ENV }}" > apps/mfe3/.env
+          cat apps/mfe3/.env
+        env:
+          REACT_APP_ENV: ${{ secrets.REACT_APP_ENV }}
 
       - uses: nrwl/nx-set-shas@v4
         name: Configure base and head SHAs required for the nx affected
@@ -62,3 +70,6 @@ jobs:
       # Build the app for different environment
       - name: Build app for staging
         run: npx nx run-many -t lint test build --configuration=staging
+
+      - name: Build app for staging without cache
+        run: npx nx run-many -t lint test build --configuration=staging --skip-nx-cache

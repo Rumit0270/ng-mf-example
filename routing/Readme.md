@@ -2,6 +2,8 @@
 
 ## Prerequisites
 
+- Add proper base prefix(/ui/shell/mfe3) in .env for mfe3 application
+
 - From the root, build the frontend application
 
 ```sh
