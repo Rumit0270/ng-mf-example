@@ -3,6 +3,10 @@
 - This is a simple demostration of a micro-frontend app with Webpack Module federation and Nx.
 - node version: v20.14.0
 
+## Prerequisutes
+
+- Add .env file for mfe3 application
+
 ## References
 
 - [Nx Module Federation with Angular](https://nx.dev/recipes/angular/dynamic-module-federation-with-angular)
