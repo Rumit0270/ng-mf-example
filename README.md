@@ -125,3 +125,21 @@ nx g @nx/angular:ngrx-feature-store count
 - Each app maintains its own set of translations
 
 - Translations for shared UI elements are maintained under shared lib and then the configuration on subapps are updated to include the shared translations in bundle. Micro apps will then load both set of translations initially.
+
+## Deployment
+
+- A Github action script is used to deploy the project to S3 with Cloudfront.
+  [Auth GA with AWS](https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services)
+
+- It uses [Paths filter](https://github.com/dorny/paths-filter) action to deploy only the sub project is has changed
+
+- Add following action secrets
+
+```
+REACT_APP_ENV=
+IAM_ROLE_ARN=
+BUCKET_NAME=
+CLOUDFRONT_DISTRIBUTION_ID=
+```
+
+- ![Demo](ng-mf-example-demo.gif)

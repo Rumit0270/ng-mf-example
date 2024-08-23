@@ -5,7 +5,7 @@ import './Home.css';
 const Home = () => {
   return (
     <>
-      <h1 className="app-title">Welcome to React App</h1>
+      <h1 className="app-title">Welcome to React App!</h1>
       <Link to="user-list">Show Users</Link>
 
       {/* <button
