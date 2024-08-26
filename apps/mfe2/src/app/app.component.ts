@@ -2,15 +2,16 @@ import { RouterModule } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-import { LogService } from '@ng-mf-example/shared-lib';
+import { LoadingComponent, LogService } from '@ng-mf-example/shared-lib';
 
 import { environment } from '../environments/environment';
 
 @Component({
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, LoadingComponent],
   selector: 'mfe2-root',
-  template: '<router-outlet></router-outlet>',
+  template: ` <lib-loading></lib-loading>
+    <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {
   constructor(
