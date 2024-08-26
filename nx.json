@@ -35,8 +35,15 @@
     "@nx/jest:jest": {
       "cache": true,
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
-      "options": { "passWithNoTests": true },
-      "configurations": { "ci": { "ci": true, "codeCoverage": true } }
+      "options": {
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
     },
     "@nx/angular:webpack-browser": {
       "cache": true,
@@ -44,7 +51,9 @@
       "inputs": [
         "production",
         "^production",
-        { "env": "NX_MF_DEV_SERVER_STATIC_REMOTES" }
+        {
+          "env": "NX_MF_DEV_SERVER_STATIC_REMOTES"
+        }
       ]
     },
     "@nx/webpack:webpack": {
@@ -53,7 +62,9 @@
       "inputs": [
         "production",
         "^production",
-        { "env": "NX_MF_DEV_SERVER_STATIC_REMOTES" }
+        {
+          "env": "NX_MF_DEV_SERVER_STATIC_REMOTES"
+        }
       ]
     }
   },
@@ -64,8 +75,13 @@
       "style": "less",
       "unitTestRunner": "jest"
     },
-    "@nx/angular:library": { "linter": "eslint", "unitTestRunner": "jest" },
-    "@nx/angular:component": { "style": "css" },
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {
+      "style": "css"
+    },
     "@nx/react": {
       "application": {
         "babel": true,
@@ -73,8 +89,13 @@
         "linter": "eslint",
         "bundler": "webpack"
       },
-      "component": { "style": "css" },
-      "library": { "style": "css", "linter": "eslint" }
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint"
+      }
     }
   },
   "plugins": [
