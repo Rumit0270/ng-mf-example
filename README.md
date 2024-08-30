@@ -6,8 +6,8 @@
 ## Prerequisutes
 
 - Add .env file for mfe3 application
-- You can add .env file to the root of directory to use Nx Cloud. More in connecting workspace to Nx cloud can be read [here](https://nx.dev/ci/intro/connect-to-nx-cloud). An example to make use of distributed caching without Nx Cloud is added [here](https://github.com/Rumit0270/ng-mf-example/tree/feat/use-nx-s3-cache).
-- You can add `APP_ENV` github secret for the application environments to connect with NX Cloud in CI environment
+- You can add .env file to make use of distributed caching
+- You can add `NX_S3_ENV` github secret with .env contents for the application environments to make use of distributed caching
 
 ## Steps
 
@@ -147,3 +147,17 @@ CLOUDFRONT_DISTRIBUTION_ID=
 - [Microfrontends](https://javascript.plainenglish.io/its-time-to-talk-about-import-map-micro-frontend-and-nx-monorepo-0b8e2c07568a)
 - [Nx Angular Monorepo](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
 - [Handle Translations](https://stackoverflow.com/questions/76219437/share-ngx-translate-translation-files-across-multiple-apps-in-a-nx-workspace)
+- ![Demo](ng-mf-example-demo.gif)
+
+## Use Distribution caching wihout NX Cloud
+
+- Remote Caching is a major benefit of Nx Cloud. But since it is a premium feature, we may not want to integrate into our project. We can make use of [this](https://www.npmjs.com/package/@nx-aws-plugin/nx-aws-cache) to implement distribution cahing feature without Nx Cloud.
+
+```sh
+npm i @nx-aws-plugin/nx-aws-cache
+npx nx generate @nx-aws-plugin/nx-aws-cache:init
+```
+
+- This package will maintain the cache in a S3 bucket and distribute between developer machines and CI/CD pipeline
+
+- Create .env file with all credentials required to access s3 bucket cache

@@ -1,0 +1,56 @@
+name: Build/Test/Lint applications without NX Cloud
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout code
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Cache Node modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: node_modules-${{hashFiles('package-lock.json')}}
+          restore-keys: node_modules- # Take any latest cache if failed to find it for current package-lock.json'
+
+      - run: npm ci
+        name: Install Dependencies
+
+      - name: Add .env file for NX S3 cache
+        run: |
+          echo "${{ secrets.NX_S3_ENV }}" > .env
+
+      - name: Add .env file for React app
+        run: |
+          echo "${{ secrets.REACT_APP_ENV }}" > apps/mfe3/.env
+          cat apps/mfe3/.env
+        env:
+          REACT_APP_ENV: ${{ secrets.REACT_APP_ENV }}
+
+      - uses: nrwl/nx-set-shas@v4
+        name: Configure base and head SHAs required for the nx affected
+
+      # Build the app for different environment
+      - name: Build app for staging
+        run: npx nx run-many -t lint test build --configuration=staging
+
+      - name: Build app for staging without cache
+        run: npx nx run-many -t lint test build --configuration=staging --skip-nx-cache

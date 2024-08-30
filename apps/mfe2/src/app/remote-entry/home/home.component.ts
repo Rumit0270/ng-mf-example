@@ -4,10 +4,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import {
+  LogService,
   BannerComponent,
   ButtonComponent,
-  LogService,
 } from '@ng-mf-example/shared-lib';
 
 import {

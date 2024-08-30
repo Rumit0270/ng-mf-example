@@ -108,5 +108,10 @@
         "ciTargetName": "e2e-ci"
       }
     }
-  ]
+  ],
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nx-aws-plugin/nx-aws-cache"
+    }
+  }
 }
