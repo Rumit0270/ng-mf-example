@@ -20,6 +20,7 @@ const users = [
   { name: 'Henry', email: 'henry@example.com' },
   { name: 'Ivy', email: 'ivy@example.com' },
   { name: 'Jack', email: 'jack@example.com' },
+  { name: 'Katie', email: 'katie@example.com' },
 ];
 
 const basename = isStandalone ? '/' : process.env.BASE_PREFIX;
