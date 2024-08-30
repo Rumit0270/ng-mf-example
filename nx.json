@@ -109,5 +109,9 @@
       }
     }
   ],
-  "nxCloudAccessToken": "OTFmYjRhMzctY2EzNS00MGRjLWI4MDctNjQ3YmQxYTA3OTcxfHJlYWQtd3JpdGU="
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nx-aws-plugin/nx-aws-cache"
+    }
+  }
 }

@@ -143,3 +143,16 @@ CLOUDFRONT_DISTRIBUTION_ID=
 ```
 
 - ![Demo](ng-mf-example-demo.gif)
+
+## Use Distribution caching wihout NX Cloud
+
+- Remote Caching is a major benefit of Nx Cloud. But since it is a premium feature, we may not want to integrate into our project. We can make use of [this](https://www.npmjs.com/package/@nx-aws-plugin/nx-aws-cache) to implement distribution cahing feature without Nx Cloud.
+
+```sh
+npm i @nx-aws-plugin/nx-aws-cache
+npx nx generate @nx-aws-plugin/nx-aws-cache:init
+```
+
+- This package will maintain the cache in a S3 bucket and distribute between developer machines and CI/CD pipeline
+
+- Create .env file with all credentials required to access s3 bucket cache
