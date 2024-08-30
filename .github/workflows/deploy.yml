@@ -37,10 +37,10 @@ jobs:
         name: Install Dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
 
-      - name: Add .env file for React app
+      - name: Add .env file for React app and NX configuration
         run: |
           echo "${{ secrets.REACT_APP_ENV }}" > apps/mfe3/.env
-          cat apps/mfe3/.env
+          echo "${{ secrets.APP_ENV }}" > .env
         env:
           REACT_APP_ENV: ${{ secrets.REACT_APP_ENV }}
 

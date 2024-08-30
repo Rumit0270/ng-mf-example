@@ -6,16 +6,8 @@
 ## Prerequisutes
 
 - Add .env file for mfe3 application
-
-## References
-
-- [Nx Module Federation with Angular](https://nx.dev/recipes/angular/dynamic-module-federation-with-angular)
-- [Nx React](https://nx.dev/nx-api/react)
-- [Upgrade Angular with Nx](https://medium.com/@marcelltech/update-guide-nx-workspace-to-angular-17-77af98c88895)
-- [Article](https://javascript-conference.com/blog/microfrontends-in-the-monorepo/)
-- [Microfrontends](https://javascript.plainenglish.io/its-time-to-talk-about-import-map-micro-frontend-and-nx-monorepo-0b8e2c07568a)
-- [Nx Angular Monorepo](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
-- [Handle Translations](https://stackoverflow.com/questions/76219437/share-ngx-translate-translation-files-across-multiple-apps-in-a-nx-workspace)
+- You can add .env file to the root of directory to use Nx Cloud. More in connecting workspace to Nx cloud can be read [here](https://nx.dev/ci/intro/connect-to-nx-cloud). An example to make use of distributed caching without Nx Cloud is added [here](https://github.com/Rumit0270/ng-mf-example/tree/feat/use-nx-s3-cache).
+- You can add `APP_ENV` github secret for the application environments to connect with NX Cloud in CI environment
 
 ## Steps
 
@@ -126,6 +118,8 @@ nx g @nx/angular:ngrx-feature-store count
 
 - Translations for shared UI elements are maintained under shared lib and then the configuration on subapps are updated to include the shared translations in bundle. Micro apps will then load both set of translations initially.
 
+- An example of how translations can be placed in shared location is added [here](https://github.com/Rumit0270/ng-mf-example/tree/feat/shared-translations)
+
 ## Deployment
 
 - A Github action script is used to deploy the project to S3 with Cloudfront.
@@ -142,4 +136,14 @@ BUCKET_NAME=
 CLOUDFRONT_DISTRIBUTION_ID=
 ```
 
-- ![Demo](ng-mf-example-demo.gif)
+![Demo](ng-mf-example-demo.gif)
+
+## References
+
+- [Nx Module Federation with Angular](https://nx.dev/recipes/angular/dynamic-module-federation-with-angular)
+- [Nx React](https://nx.dev/nx-api/react)
+- [Upgrade Angular with Nx](https://medium.com/@marcelltech/update-guide-nx-workspace-to-angular-17-77af98c88895)
+- [Article](https://javascript-conference.com/blog/microfrontends-in-the-monorepo/)
+- [Microfrontends](https://javascript.plainenglish.io/its-time-to-talk-about-import-map-micro-frontend-and-nx-monorepo-0b8e2c07568a)
+- [Nx Angular Monorepo](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
+- [Handle Translations](https://stackoverflow.com/questions/76219437/share-ngx-translate-translation-files-across-multiple-apps-in-a-nx-workspace)
