@@ -15,7 +15,6 @@
     "start:all": "concurrently \"npm run start:shell\" \"npm run start:mfe1\" \"npm run start:mfe2\" \"npm run start:mfe3\" ",
     "build": "npm run build:mfe1 && npm run build:mfe2 && npm run build:mfe3 && npm run build:shell",
     "build:all": "concurrently \"npm run build:shell\" \"npm run build:mfe1\" \"npm run build:mfe2\" \"npm run build:mfe3\" ",
-    "test:all": "concurrently \"npm run test:shell\" \"npm run test:mfe1\" \"npm run test:mfe2\" \"npm run test:mfe3\" ",
     "build-and-test": "npm run test:all && npm run build:all",
     "test:shell": "nx test shell",
     "test:mfe1": "nx test mfe1",
@@ -23,7 +22,8 @@
     "test:mfe3": "nx test mfe3",
     "test:mfe1:e2e": "nx e2e mfe1",
     "test:shared-lib": "nx test shared-lib",
-    "build:staging": "npx nx run-many -t build --configuration=staging"
+    "build:staging": "npx nx run-many -t build --configuration=staging",
+    "test:all": "npx nx run-many -t test --code-coverage --coverageReporters=lcov && node scripts/merge-coverage.js"
   },
   "private": true,
   "dependencies": {
@@ -110,5 +110,8 @@
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.4.2"
+  },
+  "engines": {
+    "node": ">=20.x.x"
   }
 }
